@@ -198,7 +198,7 @@ const Results = (): JSX.Element => {
           `background:${colors.success};color:${colors.background};padding: 4px 8px;font-size:16px;`,
           `font-weight: bold; color: ${colors.success};`,
           `color: ${colors.success};`,
-          `color: #1d8242;`,`color: #1d8242;text-decoration:underline;`,`color: #1d8242;`,
+          "color: #1d8242;","color: #1d8242;text-decoration:underline;","color: #1d8242;",
         );
         if (!(window as any).webScan) (window as any).webScan = {};
         if (data) (window as any).webScan[job] = data;
@@ -236,7 +236,7 @@ const Results = (): JSX.Element => {
         response.json()
           .then(data => resolve(data))
           .catch(error => resolve(
-            { error: `Failed to get a valid response 😢\n`
+            { error: "Failed to get a valid response 😢\n"
             + 'This is likely due the target not exposing the required data, '
             + 'or limitations in imposed by the infrastructure this instance '
             + 'of Web Scan is running on.\n\n'

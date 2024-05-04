@@ -10,9 +10,9 @@ const handler = async (url, event, context) => {
     );
   }
 
-  const endpoint = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?`
+  const endpoint = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?"
   + `url=${encodeURIComponent(url)}&category=PERFORMANCE&category=ACCESSIBILITY`
-  + `&category=BEST_PRACTICES&category=SEO&category=PWA&strategy=mobile`
+  + "&category=BEST_PRACTICES&category=SEO&category=PWA&strategy=mobile"
   + `&key=${apiKey}`;
 
   return (await axios.get(endpoint)).data;
