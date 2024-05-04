@@ -5,7 +5,7 @@ interface Props {
 
 const Flag = ({ countryCode, width }: Props): JSX.Element => {
 
-  const getFlagUrl = (code: string, w: number = 64) => {
+  const getFlagUrl = (code: string, w = 64) => {
     const protocol = 'https';
     const cdn = 'flagcdn.com';
     const dimensions = `${width}x${width * 0.75}`;
