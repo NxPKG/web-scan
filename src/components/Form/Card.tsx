@@ -21,7 +21,7 @@ interface CardProps {
   children: React.ReactNode;
   heading?: string,
   styles?: string;
-  actionButtons?: ReactNode | undefined;
+  actionButtons?: ReactNode;
 };
 
 export const Card = (props: CardProps): JSX.Element => {
