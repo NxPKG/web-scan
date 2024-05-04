@@ -141,7 +141,7 @@ const copyToClipboard = (text: string) => {
   navigator.clipboard.writeText(text);
 }
 
-const snip = (text: string, length: number = 80) => {
+const snip = (text: string, length = 80) => {
   if (text.length < length) return text;
   return `${text.substring(0, length)}...`;
 };
