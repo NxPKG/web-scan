@@ -4,7 +4,7 @@ import Row from 'components/Form/Row';
 import Heading from 'components/Form/Heading';
 import colors from 'styles/colors';
 
-const cardStyles = ``;
+const cardStyles = "";
 
 const MailConfigCard = (props: {data: any, title: string, actionButtons: any }): JSX.Element => {
   const mailServer = props.data;

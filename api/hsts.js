@@ -19,20 +19,20 @@ const handler = async (url, event, context) => {
       const hstsHeader = headers['strict-transport-security'];
 
       if (!hstsHeader) {
-        resolve(hstsIncompatible(`Site does not serve any HSTS headers.`));
+        resolve(hstsIncompatible("Site does not serve any HSTS headers."));
       } else {
         const maxAgeMatch = hstsHeader.match(/max-age=(\d+)/);
         const includesSubDomains = hstsHeader.includes('includeSubDomains');
         const preload = hstsHeader.includes('preload');
 
         if (!maxAgeMatch || parseInt(maxAgeMatch[1]) < 10886400) {
-          resolve(hstsIncompatible(`HSTS max-age is less than 10886400.`));
+          resolve(hstsIncompatible("HSTS max-age is less than 10886400."));
         } else if (!includesSubDomains) {
-          resolve(hstsIncompatible(`HSTS header does not include all subdomains.`));
+          resolve(hstsIncompatible("HSTS header does not include all subdomains."));
         } else if (!preload) {
-          resolve(hstsIncompatible(`HSTS header does not contain the preload directive.`));
+          resolve(hstsIncompatible("HSTS header does not contain the preload directive."));
         } else {
-          resolve(hstsIncompatible(`Site is compatible with the HSTS preload list!`, true, hstsHeader));
+          resolve(hstsIncompatible("Site is compatible with the HSTS preload list!", true, hstsHeader));
         }
       }
     });
